@@ -28,7 +28,7 @@ export const ForgotPasswordText = styled.Text`
   font-family:'RobotoSlab-Regular'
 `;
 
-export const BackToSign = styled.TouchableOpacity`
+export const BackToSignIn = styled.TouchableOpacity`
   position: absolute;
   left: 0;
   right: 0;

@@ -28,7 +28,7 @@ export const ForgotPasswordText = styled.Text`
   font-family:'RobotoSlab-Regular'
 `;
 
-export const CreateAcountButton = styled.TouchableOpacity`
+export const CreateAccountButton = styled.TouchableOpacity`
   position: absolute;
   left: 0;
   right: 0;
@@ -44,7 +44,7 @@ export const CreateAcountButton = styled.TouchableOpacity`
 
 `;
 
-export const CreateAcountButtonText = styled.Text`
+export const CreateAccountButtonText = styled.Text`
   color: #ff9000;
   font-size: 18px;
   font-family: 'RobotoSlab-Regular';
