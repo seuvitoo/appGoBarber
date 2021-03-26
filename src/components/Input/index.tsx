@@ -9,14 +9,17 @@ import { Container, TextInput, Icon } from './styles';
 interface InputValueReference {
   value: string,
 }
+
 interface InputProps extends TextInputProps {
   name: string;
   icon: string;
 }
 
 const Input: React.FC<InputProps> = ({ name, icon, ...rest }) => {
+
   const inputElementRef = useRef<any>(null)
-  const { registerField, defaultValue, fieldName, error } = useField(name);
+
+  const { registerField, fieldName, defaultValue = '', error } = useField(name);
   const inputValueRef = useRef<InputValueReference>({ value: defaultValue });
 
   useEffect(() => {
@@ -31,10 +34,10 @@ const Input: React.FC<InputProps> = ({ name, icon, ...rest }) => {
       clearValue() {
         inputValueRef.current.value = '';
         inputElementRef.current.clear();
-
       },
     })
-  }, [fieldName, registerField])
+  }, [registerField, fieldName]);
+
   return (
     <Container>
       <Icon name={icon} size={20} color="#666360" />
@@ -44,8 +47,8 @@ const Input: React.FC<InputProps> = ({ name, icon, ...rest }) => {
         keyboardAppearance="dark"
         placeholderTextColor="#666360"
         defaultValue={defaultValue}
-        onChangeText={(value) => {
-          inputValueRef.current.value;
+        onChangeText={value => {
+          inputValueRef.current.value = value;
 
         }}
         {...rest}
