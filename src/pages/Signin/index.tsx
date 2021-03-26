@@ -16,13 +16,11 @@ import getValidationErrors from '../../utils/getValidationErrors';
 import { Form } from '@unform/mobile';
 import { FormHandles } from '@unform/core';
 
-// COMPONENTES CRIADOS PARA APLICAÇÃO
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 
 import logoImg from '../../assets/logo.png';
 
-//IMPORTAÇÃO DE ESTILOS
 import {
   Container,
   Title,

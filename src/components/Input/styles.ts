@@ -24,7 +24,6 @@ export const Container = styled.View<IContainerProps>`
     props.isErrored &&
     css`
       border-color: #c53030;
-      
     `}
 
   ${props =>
