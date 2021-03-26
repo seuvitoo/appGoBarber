@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Image, ScrollView, KeyboardAvoidingView, Platform, View } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 import { useNavigation } from '@react-navigation/native'
+
+import { Form } from '@unform/mobile';
+import { FormHandles } from '@unform/core';
 
 import Input from '../../components/Input';
 import Button from '../../components/Button';
@@ -9,10 +12,13 @@ import Button from '../../components/Button';
 
 import logoImg from '../../assets/logo.png';
 
-import { Container, Title, ForgotPassword, BackToSign, BackToSignText, } from './styles';
+import { Container, Title, BackToSignIn, BackToSignText, } from './styles';
 
 const SignUp: React.FC = () => {
+  const formRef = useRef<FormHandles>(null);
+
   const navigation = useNavigation();
+
   return (
     <>
       <KeyboardAvoidingView
@@ -30,28 +36,36 @@ const SignUp: React.FC = () => {
               <Title>Crie sua Conta</Title>
             </View>
 
-            <Input name="name" icon="user" placeholder="nome" />
+            <Form
+              ref={formRef}
+              onSubmit={data => {
+                console.log(data);
+              }}
+            >
+              <Input name="name" icon="user" placeholder="Nome" />
 
-            <Input name="email" icon="mail" placeholder="email" />
+              <Input name="email" icon="mail" placeholder="email" />
 
-            <Input name="password" icon="lock" placeholder="senha" />
+              <Input name="password" icon="lock" placeholder="senha" />
 
-            <Button onPress={() => { }}>Entrar</Button>
-
-
+              <Button onPress={() => formRef.current?.submitForm()}>
+                Entrar
+                </Button>
+            </Form>
 
           </Container>
         </ScrollView>
       </KeyboardAvoidingView>
 
 
-      <BackToSign onPress={() => { navigation.goBack() }}>
+      <BackToSignIn onPress={() => navigation.goBack()}>
         <Icon name="arrow-left" size={20} color="#fff" />
+
         <BackToSignText>Voltar para Logon</BackToSignText>
-      </BackToSign>
+      </BackToSignIn>
     </>
   )
 
-
 };
+
 export default SignUp;
