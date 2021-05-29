@@ -64,4 +64,7 @@ buck-out/
 
 
 #meu arquivos ignorados
-yarn.lock
+./yarn.lock
+ios/Podfile.lock
+ios/appgobarber.xcodeproj/project.pbxproj
+ios/appgobarber.xcworkspace/
