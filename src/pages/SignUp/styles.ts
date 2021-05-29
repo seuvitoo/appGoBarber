@@ -12,7 +12,7 @@ export const Container = styled.View`
 export const Title = styled.Text`
   font-size: 20px;
   color: #f4ede8;
-  font-family: 'RobotoSlab-Medium';
+  font-family: 'Roboto-Medium';
   margin: 64px 0 24px;
 `;
 
@@ -23,7 +23,7 @@ export const ForgotPassword = styled.TouchableOpacity`
 export const ForgotPasswordText = styled.Text`
   color: #f4ede8;
   font-size: 16px;
-  font-family: 'RobotoSlab-Regular';
+  font-family: 'Roboto-Regular';
 `;
 
 export const BackToSignIn = styled.TouchableOpacity`
@@ -44,6 +44,6 @@ export const BackToSignIn = styled.TouchableOpacity`
 export const BackToSignText = styled.Text`
   color: #fff;
   font-size: 18px;
-  font-family: 'RobotoSlab-Regular';
+  font-family: 'Roboto-Regular';
   margin-left: 16px;
 `;
